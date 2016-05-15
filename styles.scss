@@ -1,0 +1,28 @@
+@import "main";
+@import "mixins";
+@import "variables";
+
+.background-slide-in {
+  position: relative;
+  color: $black;
+}
+
+.background-slide-in:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: $red-bg;
+  content: "";
+  @include transition(width, 0.4s);
+  z-index: -2;
+}
+
+.background-slide-in:hover {
+  color: $black;
+  cursor: pointer;
+}
+.background-slide-in:hover:after {
+  width: 100%;
+}
